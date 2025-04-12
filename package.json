@@ -68,5 +68,9 @@
 	},
 	"keywords": [
 		"svelte"
-	]
+	],
+	"dependencies": {
+		"animejs": "^4.0.1",
+		"axios": "^1.8.4"
+	}
 }
