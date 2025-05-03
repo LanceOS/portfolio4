@@ -1,6 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-	import { animate } from 'animejs';
 </script>
 
 <section class="flex justify-between">

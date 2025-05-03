@@ -2,9 +2,11 @@
 	import Header from '$lib/components/header/Header.svelte';
 	import DeskNav from '$lib/components/navbar/DeskNav.svelte';
 	import MobileNav from '$lib/components/navbar/MobileNav.svelte';
+	import Spotify from '$lib/tools/Spotify.js';
 	import { onMount } from 'svelte';
 
 	let mobile = $state(false);
+	let spotifyTrack = $state({})
 
 	const checkIsMobile = () => {
 		if (typeof window !== 'undefined') {
@@ -18,6 +20,8 @@
 		return () => {
 			window.removeEventListener('resize', checkIsMobile);
 		};
+
+
 	});
 </script>
 
