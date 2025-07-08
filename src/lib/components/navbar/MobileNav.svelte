@@ -26,14 +26,14 @@
 	aria-label="Open Navbar"
 	onclick={() => (open = !open)}
 >
-	<div class={`h-1 w-full bg-white duration-200 ${open ? 'translate-y-2 rotate-45' : ''}`}></div>
-	<div class={`h-1 w-full bg-white duration-200 ${open ? 'opacity-0' : ''}`}></div>
-	<div class={`h-1 w-full bg-white duration-200 ${open ? '-translate-y-4 -rotate-45' : ''}`}></div>
+	<div class={`h-1 w-full bg-neutral duration-200 ${open ? 'translate-y-2 rotate-45' : ''}`}></div>
+	<div class={`h-1 w-full bg-neutral duration-200 ${open ? 'opacity-0' : ''}`}></div>
+	<div class={`h-1 w-full bg-neutral duration-200 ${open ? '-translate-y-4 -rotate-45' : ''}`}></div>
 </button>
 
 <section
 	class={`bg-base-200 absolute top-0 right-0 z-10 flex h-dvh flex-col items-center justify-center
-	 gap-12 overflow-x-hidden duration-200 ${open ? `${mobile ? 'w-full' : 'w-90'}` : 'w-0'}`}
+	 gap-12 overflow-x-hidden duration-200 ${open ? `${mobile ? 'w-full' : 'w-[50%]'}` : 'w-0'}`}
 >
 	<nav class={`${open ? 'block' : 'hidden'}`}>
 		<button type="button" aria-label="Sign In" onclick={() => goto('/signin')} class="btn"
