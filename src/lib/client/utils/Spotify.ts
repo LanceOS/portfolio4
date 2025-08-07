@@ -1,15 +1,7 @@
 
 
-class Spotify {
-    instance: Spotify | null = null;
-
-    constructor() {
-        if(this.instance) return this.instance;
-        this.instance = null;
-    }
-
-
-    static async getAccessTokenObj() {
+export const SpotifyClient = {
+    getAccessTokenObj: async () => {
         try {
             const response = await fetch("http://localhost:5173/spotify/getaccesstoken", {
                 method: "POST",
@@ -19,19 +11,17 @@ class Spotify {
             })
 
             const data = await response.json();
-            if(!data) {
+            if (!data) {
                 throw new Error("Access token data null or undefined:", data)
             }
 
             return data;
-        }
-        catch(error) {
+        } catch (error) {
             throw new Error(`Failed to get access token: ${error}`)
         }
-    }
+    },
 
-
-    static async getCurrentTrack() {
+    getCurrentTrack: async () => {
         try {
             const response = await fetch("http://localhost:5173/spotify/usertrack", {
                 method: "GET",
@@ -40,17 +30,14 @@ class Spotify {
                 }
             })
 
-            if(!response) {
+            if (!response) {
                 throw new Error("Response failed");
             }
 
             const data = await response.json()
             return data;
-        }
-        catch(error) {
+        } catch (error) {
             throw new Error(`Failed to get current playing track: ${error}`)
         }
     }
 }
-
-export default Spotify;
